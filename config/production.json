@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "aleshaFirstMernApp",
+    "mongoUri": "mongodb+srv://alesha:alex967268@cluster0.k3nbs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:5000"
+}
