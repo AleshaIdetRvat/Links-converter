@@ -1,10 +1,10 @@
 {
-    "name": "firstproject",
+    "name": "shortLickConverter",
     "version": "1.0.0",
     "description": "mernStack",
     "main": "app.js",
     "scripts": {
-        "start": "cross-env NODE_ENV=production node app.js",
+        "start": "node app.js",
         "server": "nodemon app.js",
         "client": "npm run start --prefix client",
         "client:install": "npm install --prefix client",
@@ -20,7 +20,9 @@
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "config": "^3.3.6",
+        "cors": "^2.8.5",
         "cross-env": "^7.0.3",
+        "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "express-validator": "^6.12.1",
         "jsonwebtoken": "^8.5.1",
