@@ -34,7 +34,7 @@ router.post("/generate", authMiddleWare, async (request, response) => {
 
         response.status(201).json({ link })
     } catch (error) {
-        response.status(500).json({ message: "Something wrong" })
+        response.status(500).json({ message: error.message })
     }
 })
 
@@ -65,7 +65,7 @@ router.delete("/:id", authMiddleWare, async (request, response) => {
     } catch (error) {
         console.error("error: ", error.message)
 
-        response.status(500).json({ message: "Something wrong" })
+        response.status(500).json({ message: "Something delete wrong" })
     }
 })
 
