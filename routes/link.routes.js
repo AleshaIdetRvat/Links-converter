@@ -55,9 +55,8 @@ router.get("/:id", authMiddleWare, async (request, response) => {
         response.status(500).json({ message: "Link not found" })
     }
 })
-//authMiddleWare,
 
-router.delete("/:id", async (request, response) => {
+router.delete("/:id", authMiddleWare, async (request, response) => {
     try {
         await Link.findByIdAndDelete(request.params.id)
         console.log("Link delete succes")
