@@ -1,6 +1,5 @@
 {
     "port": 80,
     "jwtSecret": "aleshaFirstMernApp",
-    "mongoUri": "mongodb+srv://alesha:alex967268@cluster0.k3nbs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "baseUrl": ""
+    "mongoUri": "mongodb+srv://alesha:alex967268@cluster0.k3nbs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

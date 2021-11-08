@@ -1,9 +1,7 @@
 const { Router } = require("express")
-// const bcrypt = require("bcryptjs")
 const config = require("config")
 const shortId = require("shortid")
 const Link = require("../models/Link")
-// const { check, validationResult } = require("express-validator")
 const authMiddleWare = require("../middleware/auth.middleware")
 
 const router = Router()
@@ -54,6 +52,20 @@ router.get("/:id", authMiddleWare, async (request, response) => {
         const link = await Link.findById(request.params.id)
         response.json(link)
     } catch (error) {
+        response.status(500).json({ message: "Link not found" })
+    }
+})
+//authMiddleWare,
+
+router.delete("/:id", async (request, response) => {
+    try {
+        await Link.findByIdAndDelete(request.params.id)
+        console.log("Link delete succes")
+
+        response.status(200).json({ message: "Link delete succes" })
+    } catch (error) {
+        console.error("error: ", error.message)
+
         response.status(500).json({ message: "Something wrong" })
     }
 })
