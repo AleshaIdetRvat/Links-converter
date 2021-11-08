@@ -1,9 +1,9 @@
 const { Router } = require("express")
-const bcrypt = require("bcryptjs")
+// const bcrypt = require("bcryptjs")
 const config = require("config")
 const shortId = require("shortid")
 const Link = require("../models/Link")
-const { check, validationResult } = require("express-validator")
+// const { check, validationResult } = require("express-validator")
 const authMiddleWare = require("../middleware/auth.middleware")
 
 const router = Router()
@@ -23,7 +23,14 @@ router.post("/generate", authMiddleWare, async (request, response) => {
 
         const to = baseUrl + "/t/" + code
 
-        const link = new Link({ color, code, to, from, owner: request.user.userId, name })
+        const link = new Link({
+            color,
+            code,
+            to,
+            from,
+            owner: request.user.userId,
+            name,
+        })
 
         await link.save()
 

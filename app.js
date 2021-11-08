@@ -4,6 +4,16 @@ const mongoose = require("mongoose")
 const path = require("path")
 const app = express()
 
+app.use((req, res, next) => {
+    res.append("Access-Control-Allow-Origin", ["*"])
+    res.append("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE")
+    res.append(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    )
+    next()
+}) // CORS
+
 app.use(express.json({ extended: true }))
 
 app.use("/api/auth", require("./routes/auth.routes"))
@@ -18,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
     })
 }
 
-const PORT = config.get("port") || 5000
+const PORT = 5000 //config.get("port") || 5001
 
 async function start() {
     try {
