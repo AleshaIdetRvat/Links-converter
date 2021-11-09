@@ -9,6 +9,7 @@ const router = Router()
 router.post("/generate", authMiddleWare, async (request, response) => {
     try {
         const baseUrl = config.get("baseUrl")
+        console.log("_____base url:", baseUrl)
         const { from, name, color } = request.body
 
         const existing = await Link.findOne({ from })
