@@ -4,18 +4,12 @@
 
 But unfortunately, short links will not open on free Netlify hosting
 
+[Client repo](https://github.com/AleshaIdetRvat/link-converter-client)
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm run dev`
-
-Runs the client and server in the development mode.\
-
 ### `npm run server`
 
-Runs the server in the development mode.\
-
-### `npm run client`
-
-Runs the client in the development mode.\
+Runs the server in the development mode.
